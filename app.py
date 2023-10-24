@@ -141,6 +141,21 @@ def predict():
         'colors': colors
         },
         )
+
+@app.route('/test', methods=['POST'])
+def predict():
+    image = request.files['image']
+    image_without_background = remove_background(image)
+
+    # cloth_type, probability_type = predict_cloth_type(image_without_background, main_path='converted_tflite_cloth_type')
+    # cloth_season, probability_season = predict_cloth_type(image_without_background, main_path='converted_tflite_cloth_season')
+    # cloth_style, probability_style = predict_cloth_type(image_without_background, main_path='converted_tflite_cloth_style')
+    colors = get_colors(image_without_background)
+    return jsonify(
+        {
+        'colors': colors
+        },
+        )
         
 
 @app.route('/', methods=['GET']) 
