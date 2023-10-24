@@ -142,8 +142,8 @@ def predict():
         },
         )
 
-@app.route('/test', methods=['POST'])
-def predict():
+@app.route('/testing', methods=['POST'])
+def testing():
     image = request.files['image']
     image_without_background = remove_background(image)
 
