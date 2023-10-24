@@ -8,7 +8,6 @@ import cv2
 import io
 
 import json
-import os
 import openai
 from craiyon import Craiyon
 
