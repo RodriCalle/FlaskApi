@@ -8,11 +8,15 @@ import cv2
 import io
 
 import json
+import os
 import openai
 from craiyon import Craiyon
 
 openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
-openai.api_key = "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"
+# obtener api key desde variable de entorno
+api_key = os.getenv().get('OPENAI_API_KEY')
+
+openai.api_key = api_key
 
 app = Flask(__name__)
 
