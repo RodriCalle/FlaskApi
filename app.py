@@ -13,9 +13,9 @@ import openai
 from craiyon import Craiyon
 
 openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
-# api_key = os.getenv().get('OPENAI_API_KEY')
+api_key = os.getenv().get('OPENAI_API_KEY')
 
-openai.api_key = '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'
+openai.api_key = api_key
 
 app = Flask(__name__)
 
@@ -149,6 +149,6 @@ def predict():
 def hello_world():
     return 'Hello, World!'
 
-if __name__ == '__main__':
-    app.run(debug=False)
+# if __name__ == '__main__':
+#     app.run(debug=False)
 
