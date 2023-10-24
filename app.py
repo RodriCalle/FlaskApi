@@ -144,19 +144,12 @@ def predict():
 
 @app.route('/testing', methods=['POST'])
 def testing():
+    print("dsads")
     image = request.files['image']
     image_without_background = remove_background(image)
-
-    # cloth_type, probability_type = predict_cloth_type(image_without_background, main_path='converted_tflite_cloth_type')
-    # cloth_season, probability_season = predict_cloth_type(image_without_background, main_path='converted_tflite_cloth_season')
-    # cloth_style, probability_style = predict_cloth_type(image_without_background, main_path='converted_tflite_cloth_style')
+    print("dsaddssss")
     colors = get_colors(image_without_background)
-    return jsonify(
-        {
-        'colors': colors
-        },
-        )
-        
+    return jsonify({ 'colors': colors } )
 
 @app.route('/', methods=['GET']) 
 def hello_world():
@@ -165,3 +158,4 @@ def hello_world():
 # if __name__ == '__main__':
 #     app.run(debug=False)
 
+app.run(debug=False)
