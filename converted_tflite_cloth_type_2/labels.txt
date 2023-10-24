@@ -1,0 +1,22 @@
+0 Blazer
+1 Blouse
+2 Body
+3 Cardigan
+4 Denim
+5 Dress
+6 Hat
+7 Hoodie
+8 Jacket
+9 Leggings
+10 LongSleeve
+11 Outwear Jacket
+12 Pants
+13 Rompers Jumpsuits
+14 Shirt
+15 Shorts
+16 Skirt
+17 Suiting
+18 Sweater
+19 Top
+20 T-Shirt
+21 Undershirt

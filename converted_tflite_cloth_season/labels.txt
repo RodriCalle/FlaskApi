@@ -1,0 +1,4 @@
+0 Fall
+1 Spring
+2 Winter
+3 Summer

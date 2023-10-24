@@ -1,0 +1,20 @@
+0 Blazer
+1 Blouse
+2 Body
+3 Denim
+4 Dress
+5 Hat
+6 Hoodie
+7 Longsleeve
+8 Outwear
+9 Pants
+10 Shirt
+11 Shoes
+12 Shorts
+13 Skirt
+14 Suiting
+15 Sweaters
+16 Tees Tanks
+17 Top
+18 T-Shirt
+19 Undershirt
