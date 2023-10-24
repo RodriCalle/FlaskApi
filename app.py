@@ -13,9 +13,7 @@ import openai
 from craiyon import Craiyon
 
 openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
-api_key = os.getenv('prod').get('OPENAI_API_KEY')
-
-openai.api_key = api_key
+openai.api_key = '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'
 
 app = Flask(__name__)
 
