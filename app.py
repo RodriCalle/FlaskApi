@@ -13,10 +13,9 @@ import openai
 from craiyon import Craiyon
 
 openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
-# obtener api key desde variable de entorno
-api_key = os.getenv().get('OPENAI_API_KEY')
+# api_key = os.getenv().get('OPENAI_API_KEY')
 
-openai.api_key = api_key
+openai.api_key = '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'
 
 app = Flask(__name__)
 
@@ -151,5 +150,5 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
