@@ -3,9 +3,9 @@ craiyon.py==1.1.0
 rembg==2.0.40
 Flask==2.2.5
 Flask-RESTful==0.3.10
-numpy==1.21.6
+numpy==1.22.0
 openai==0.28.1
-opencv-python==4.8.0.76
+opencv-python==4.8.0.74
 swagger-ui-py==23.9.23
 tensorflow==2.9.1
 Gunicorn

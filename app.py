@@ -142,20 +142,10 @@ def predict():
         },
         )
 
-@app.route('/testing', methods=['POST'])
-def testing():
-    print("dsads")
-    image = request.files['image']
-    image_without_background = remove_background(image)
-    print("dsaddssss")
-    colors = get_colors(image_without_background)
-    return jsonify({ 'colors': colors } )
 
 @app.route('/', methods=['GET']) 
 def hello_world():
     return 'Hello, World!'
 
-# if __name__ == '__main__':
-#     app.run(debug=False)
-
-# app.run(debug=False)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
