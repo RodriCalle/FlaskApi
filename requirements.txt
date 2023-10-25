@@ -9,3 +9,4 @@ opencv-python==4.8.0.74
 swagger-ui-py==23.9.23
 tensorflow==2.9.1
 Gunicorn
+wheel
