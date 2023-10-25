@@ -1,6 +1,6 @@
 colorthief==0.2.1
 craiyon.py==1.1.0
-rembg==2.0.40
+rembg==2.0.51
 Flask==2.2.5
 Flask-RESTful==0.3.10
 numpy==1.22.0
