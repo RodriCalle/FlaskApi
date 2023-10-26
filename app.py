@@ -71,9 +71,10 @@ def generate_promt_to_craiyon(request, outfit):
 
     items = list(outfit.items())
     for index, (key, value) in enumerate(items):
-        prompt += value
-        if index < len(items) - 1:
-            prompt += " and "
+        if isinstance(value, str):
+            prompt += value
+            if index < len(items) - 1:
+                prompt += " and "
     prompt += "."
     return prompt
 
@@ -85,7 +86,7 @@ def generate_outfits(request_data):
         model="gpt-3.5-turbo",
         messages=[
           {"role": "system", 
-           "content": '''You are an expert in fashion and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide two sets of clothing (clothes only, no accessories) based on the main description of the clothing item. Clothing sets must be presented in JSON format, where each clothing set will be represented as a JSON object within an array.'''},
+           "content": '''You are an expert in fashion, colors and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide two full sets of clothing (clothes only, no accessories) based on the main description of the clothing item. Clothing sets must be presented in JSON format, where each clothing set will be represented as a JSON object within an array.'''},
           {"role": "user", 
            "content": prompt_chat_gpt}
         ]
@@ -105,10 +106,12 @@ def generate_outfits(request_data):
     for outfit in outfits_array:
         prompt_to_craiyon = generate_promt_to_craiyon(request_data, outfit)
         print(prompt_to_craiyon)
-        result = generator.generate(prompt= prompt_to_craiyon, negative_prompt="accessories", model_type="photo")
-        print(result.images[0])
-        outfit['image'] = result.images[0]
-        outfit['craiyon_prompt'] = prompt_to_craiyon
+        try:
+            result = generator.generate(prompt= prompt_to_craiyon, negative_prompt="accessories", model_type="photo")
+            outfit['image'] = result.images
+            outfit['craiyon_prompt'] = prompt_to_craiyon
+        except Exception as e:
+            print("Error generando imagen: ", e)
 
     return outfits_array
 
