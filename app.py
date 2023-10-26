@@ -105,11 +105,11 @@ def generate_outfits(request_data):
 
     for outfit in outfits_array:
         prompt_to_craiyon = generate_promt_to_craiyon(request_data, outfit)
-        print(prompt_to_craiyon)
+        outfit['name'] = prompt_to_craiyon
         try:
             result = generator.generate(prompt= prompt_to_craiyon, negative_prompt="accessories", model_type="photo")
-            outfit['image'] = result.images
-            outfit['craiyon_prompt'] = prompt_to_craiyon
+            outfit['images'] = result.images
+            
         except Exception as e:
             print("Error generando imagen: ", e)
 
