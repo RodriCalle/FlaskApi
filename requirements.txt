@@ -13,3 +13,4 @@ wheel
 requests
 pybase64
 pyjwt
+cryptography

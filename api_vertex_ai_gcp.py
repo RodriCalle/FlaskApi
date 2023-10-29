@@ -33,7 +33,7 @@ headers = {
 data = {
   "instances": [
     {
-      "prompt": "Photo centered of a full length man dressing blue t-shirt with light jeans and white snickers"
+      "prompt": "Fashion image of a full length man smiling dressing blue t-shirt with light jeans and white snickers"
     }
   ],
   "parameters": {

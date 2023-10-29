@@ -7,10 +7,17 @@ import numpy as np
 import cv2
 import io
 
+import requests
+import datetime
+import pybase64
+import time
+import jwt
+import json
+
 import json
 import os
 import openai
-from craiyon import Craiyon
+# from craiyon import Craiyon
 
 openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
 openai.api_key = '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'
@@ -67,7 +74,7 @@ def generate_promt_to_chat_gpt(request):
     return f"{request['style']} {request['color']} {request['type']} for {request['sex']} in {request['temperature']} degrees Celsius"
 
 def generate_promt_to_craiyon(request, outfit):
-    prompt = f"Full length {request['sex']} wearing a "
+    prompt = f"Fashion image of a Full length {request['sex']} smiling and wearing "
 
     items = list(outfit.items())
     for index, (key, value) in enumerate(items):
@@ -149,7 +156,7 @@ def generate_images_from_prompt(request_data, outfits_array):
         data = {
           "instances": [
             {
-              "prompt": "Photo centered of a " + prompt
+              "prompt": prompt
             }
           ],
           "parameters": {
