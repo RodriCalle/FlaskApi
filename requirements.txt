@@ -10,3 +10,6 @@ swagger-ui-py==23.9.23
 tensorflow==2.13.1
 Gunicorn
 wheel
+requests
+pybase64
+pyjwt
