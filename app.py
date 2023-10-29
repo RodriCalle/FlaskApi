@@ -172,7 +172,7 @@ def generate_images_from_prompt(request_data, outfits_array):
                 outfit['images'] = ""
                 outfit['name'] = ""
                 print(f"Error {response.status_code}: {response.text}")
-        except Exception e:
+        except:
             print("Ocurrio una excepcion")
     
     return outfits_array 
