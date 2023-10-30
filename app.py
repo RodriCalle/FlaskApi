@@ -73,17 +73,19 @@ def get_colors(image):
 def generate_promt_to_chat_gpt(request):
     return f"{request['style']} {request['color']} {request['type']} for {request['sex']} in {request['temperature']} degrees Celsius"
 
-def generate_promt_to_craiyon(request, outfit):
-    prompt = f"Fashion image of a Full length {request['sex']} smiling and wearing "
+def generate_promt_for_image_generation(request, outfit):
+    prompt = f"Fashion image of a full length {request['sex']} smiling and wearing {outfit}"
+    return prompt
 
+def generate_text_with_outfit(outfit):
+    outfit_text = ""
     items = list(outfit.items())
     for index, (key, value) in enumerate(items):
         if isinstance(value, str):
-            prompt += value
+            outfit_text += value
             if index < len(items) - 1:
-                prompt += " and "
-    prompt += "."
-    return prompt
+                outfit_text += " and "
+    return outfit_text
 
 def generate_outfits(request_data):
     # generar outfits text
@@ -104,23 +106,8 @@ def generate_outfits(request_data):
     # print(rpta.content)
 
     outfits_array = json.loads(rpta.content)
+    # print(outfits_array)
 
-    print(outfits_array)
-
-    # generar outfits images
-    # generator = Craiyon()
-
-    # for outfit in outfits_array:
-    #     prompt_to_craiyon = generate_promt_to_craiyon(request_data, outfit)
-    #     outfit['name'] = prompt_to_craiyon
-    #     try:
-    #         result = generator.generate(prompt= prompt_to_craiyon, negative_prompt="accessories", model_type="photo")
-    #         outfit['images'] = result.images
-            
-    #     except Exception as e:
-    #         print("Error generando imagen: ", e)
-
-    # generar outfits images
     outfits_array = generate_images_from_prompt(request_data, outfits_array)
 
     return outfits_array
@@ -151,7 +138,11 @@ def generate_images_from_prompt(request_data, outfits_array):
     }
 
     for outfit in outfits_array:
-        prompt = generate_promt_to_craiyon(request_data, outfit)
+        outfit_text = generate_text_with_outfit(outfit)
+        prompt = generate_promt_for_image_generation(request_data, outfit_text)
+
+        outfit['name'] = outfit_text
+        outfit['prompt'] = prompt
 
         data = {
           "instances": [
@@ -172,16 +163,14 @@ def generate_images_from_prompt(request_data, outfits_array):
 
                 for prediction in response_data['predictions']:
                     imageb64 = prediction['bytesBase64Encoded']
-                    mimeType = prediction['mimeType']
                     outfit['image'] = imageb64
-                    outfit['name'] = prompt
             else:
-                outfit['images'] = ""
-                outfit['name'] = ""
+                outfit['image'] = ""
                 print(f"Error {response.status_code}: {response.text}")
-        except:
-            print("Ocurrio una excepcion")
-    
+        except Exception as e:
+            print("Ocurrio una excepción", e)
+
+    outfits_array = list(filter(lambda outfit: 'image' in outfit, outfits_array))
     return outfits_array 
 
 @app.route('/closet', methods=['POST'])
