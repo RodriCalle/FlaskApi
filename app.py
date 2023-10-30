@@ -95,7 +95,7 @@ def generate_outfits(request_data):
         model="gpt-3.5-turbo",
         messages=[
           {"role": "system", 
-           "content": '''You are an expert in fashion, colors and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide two full sets of clothing (clothes only, no accessories) based on the main description of the clothing item. Clothing sets must be presented in JSON format, where each clothing set will be represented as a JSON object within an array.'''},
+           "content": '''You are an expert in fashion, colors and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide three outfits of clothing (only clothes, no accessories) based on the main description of the clothing item. Clothing outfits must be presented in JSON format, where each clothing set will be represented as a JSON object within an array, each element must have a color.'''},
           {"role": "user", 
            "content": prompt_chat_gpt}
         ]
