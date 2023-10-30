@@ -141,7 +141,7 @@ def generate_images_from_prompt(request_data, outfits_array):
         outfit_text = generate_text_with_outfit(outfit)
         prompt = generate_promt_for_image_generation(request_data, outfit_text)
 
-        outfit['id'] = datetime.now().strftime("%Y%m%d%H%M%S") + str(outfits_array.index(outfit))
+        outfit['id'] = datetime.datetime.now().strftime("%Y%m%d%H%M%S") + '-' + str(outfits_array.index(outfit))
         outfit['name'] = outfit_text
         outfit['prompt'] = prompt
 
