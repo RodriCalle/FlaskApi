@@ -1,4 +1,4 @@
-0 Casual
-1 Formal
-2 Ethnic
-3 Sport
+Casual
+Formal
+Ethnic
+Sport
