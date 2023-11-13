@@ -90,12 +90,13 @@ def generate_text_with_outfit(outfit):
 def generate_outfits(request_data):
     # generar outfits text
     prompt_chat_gpt = generate_promt_to_chat_gpt(request_data)
+    quantity = "three"
 
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
           {"role": "system", 
-           "content": '''You are an expert in fashion, colors and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide three outfits of clothing (only clothes, no accessories) based on the main description of the clothing item. Clothing outfits must be presented in JSON format, where each clothing set will be represented as a JSON object within an array, each element must have a color.'''},
+           "content": f'''You are an expert in fashion, colors and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide {quantity} outfits of clothing (only clothes, no accessories) based on the main description of the clothing item. Clothing outfits must be presented in JSON format, where each clothing set will be represented as a JSON object within an array, each element must have a color.'''},
           {"role": "user", 
            "content": prompt_chat_gpt}
         ]
@@ -113,14 +114,15 @@ def generate_outfits(request_data):
     return outfits_array
 
 def generate_images_from_prompt(request_data, outfits_array):
-    PROJECT_ID = "scenic-aileron-389223"
-    FILE_NAME = "scenic-aileron-389223-00fedf4349a3.json"
+    FILE_NAME = "fashionapp-405020-0b9fed1c56ee.json"
     API_URL = "https://us-central1-aiplatform.googleapis.com/"
-
-    url = f"{API_URL}v1/projects/{PROJECT_ID}/locations/us-central1/publishers/google/models/imagegeneration:predict"
 
     with open(FILE_NAME, "r") as file:
         data = json.load(file)
+
+    PROJECT_ID = data['project_id']
+
+    url = f"{API_URL}v1/projects/{PROJECT_ID}/locations/us-central1/publishers/google/models/imagegeneration:predict"
 
     iat = time.time()
     exp = iat + 3600

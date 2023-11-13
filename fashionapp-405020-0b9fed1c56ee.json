@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "fashionapp-405020",
+  "private_key_id": "0b9fed1c56ee8518d822fc7a51b85605952fd504",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD1DM6ioWEldHJV\n5/Q0kUmA/YJJZKZZnKO5/IbrMlBlh0xUogLEFXVrI1kZ0niEskpOTV+UDhJ/fR5u\nWq2yT7Mzo06uz6Kyzl6feggM3wE3o6KNC7kN7w2Lds7FtaV7acQR+QV12Fv23gVF\nuja7bXUPOf0eVv1SUIn9xeptY6/Hzd+I01vo35TXutkQZy7DAjrpR+NqBKPC3lVk\n4tTen+HWez+pjMyqNCQbgxu+dAybUM4JybdEs+ca/ef0Oo9w2ud0sZjwSoS/W/st\nQ4YnqYRnTEsw5SwrSvd6hsA6vybn2JhgH9xEdnnvYsr2mhV2vUxrbPYxtnyax0HC\n1d0FOd5pAgMBAAECggEALct0bFkbVgwSd/JupUpHgccei4e3PMT0pgPG1Ppkouyr\ne5+BQ9K8zEZhVt2J70aAc2yrQXh1xYSE5NumXU3er/ZDdJDSF3dQoJ4GFh2w1QyM\nCq7XqP51Ogx8bN9a6xrjbPZsKk9CNHreYl7/7nvwpeVQ49Qe6Dyr5RSREFtSVNTL\nZXJvWKVdvpP/D5qTubCS5ULsNzFVPoScOnq9q1acFl350mOyKPp8mXGMcgH/ZJqO\nADIiE2n8JI53gGu5nnCt4vkxHZ/O755AWqBNIbdeej0s8thDil6jtuzIw84Ly3+x\nEbgNPskGX3+z597978jgATLjJDKFwAguPOAFsuYTWQKBgQD7UzXzP0TBWjwmCcDE\nFzWp8e8FJoDW6LYZe//eR8Ol2a514jU5OF+lLDWnV6wr1oANGXEqTQmrUwMgiR2m\nftl//SBDT97A32HhMUl2EbPG4U5TLxRlf/OLdrcmH7JswBhJYN+qEdDrQ3gF1P4Z\nSFhcjuk9vPoWGOEIH+WQLLZIhQKBgQD5m7cfdhOMmfrIUBOiZrtcqW1tELivJI0d\nC7MqzSiPc1h5TCeKptBrFEEtTSfk+n5S1MXnyWAvqt73pGa0VLsdFVNbhmDdBZYr\nJccrxTmdwp2jD12+ONXY51eWf4fZgfcqQLl2Chc7EpZTuYdhJ3K/TdE6tNmfcaY3\nhjFTUQ/VlQKBgQCHSjjdk65gY0HDvDZPmKrjq//eBucOSUFVoKGRN5KDYhX/EWFT\nRxx9nrnXNmPRSWuvIYYAnm3ZExu41PboHJrawhkvAvzHWLio7846x7a+FaUDNHHH\nXcRty981n5R95D5uqb5dH7AWJUCj6w9J7t7aHHhEKsl5QbVJmVoLbXZGvQKBgHM3\nQFkCXNW6wbqy081T1EpaXotIe6dEnOp6WxJ3rrBAkucyktH6XBwBNnCdu7uDMMo1\nMsDiAEcgfVkcBthYgCJVlKubpJyBFqcGAiCfIhBDJBZ/YksK2xMK/jAW3/MzfY6A\nX9svnzeCReeRrP7YgavyVJDfp9BkWlAo3h3SPhfdAoGAVS2DMb/FhYOuE53KLF2v\nPCO8HNh2SrBBD4vc2EkVHkxULUnfaAX7X/0BWNXJCW/5ojZRxDcY7QgYbjYEKB1E\nF3tyLhdrPpho1Ayigucl/mfR3jWk6nOOlhCrY+M7fWEZWJ3p924kOlLkZwXDCIw3\nh+hIEoyYeVQG/ydCp0LsFng=\n-----END PRIVATE KEY-----\n",
+  "client_email": "rcalle@fashionapp-405020.iam.gserviceaccount.com",
+  "client_id": "114712221316941890187",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rcalle%40fashionapp-405020.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
