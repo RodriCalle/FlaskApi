@@ -15,11 +15,11 @@ import jwt
 
 import json
 import os
-import openai
+from openai import OpenAI
 # from craiyon import Craiyon
 
-openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
-openai.api_key = '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'
+OPENAI_API_KEY="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"
+# OpenAI.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
 
 app = Flask(__name__)
 
@@ -70,10 +70,10 @@ def get_colors(image):
     return {'palette': palette }
 
 def generate_promt_to_chat_gpt(request):
-    return f"{request['style']} {request['color']} {request['type']} for {request['sex']} in {request['temperature']} degrees Celsius"
+    return f"{request['sex']} {request['style']} {request['color']} {request['type']} for {request['season']} in {request['temperature']} Celsius degrees"
 
 def generate_promt_for_image_generation(request, outfit):
-    prompt = f"Fashion image of a full length {request['sex']} smiling and wearing {outfit}"
+    prompt = f"Fashion image of a full length {request['sex']} smiling and wearing {outfit} taken from far away."
     return prompt
 
 def generate_text_with_outfit(outfit):
@@ -89,31 +89,41 @@ def generate_text_with_outfit(outfit):
 def generate_outfits(request_data):
     # generar outfits text
     prompt_chat_gpt = generate_promt_to_chat_gpt(request_data)
-    quantity = "three"
+    quantity = "two"
 
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    client = OpenAI(api_key=OPENAI_API_KEY)
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo-1106",
+        response_format={ "type": "json_object" },
         messages=[
-          {"role": "system", 
-           "content": f'''You are an expert in fashion, colors and clothing design expert, you will be provided with statements with specific data about an item of clothing, including the type of item, color, style, and what gender it is intended for, along with the temperature of the environment. Your task is to provide {quantity} outfits of clothing (only clothes, no accessories) based on the main description of the clothing item. Clothing outfits must be presented in JSON format, where each clothing set will be represented as a JSON object within an array, each element must have a color.'''},
-          {"role": "user", 
-           "content": prompt_chat_gpt}
-        ]
+            {
+                "role": "system", 
+                "content": f'''You are a fashion expert specializing in clothing design. You will receive descriptions of clothing items, including the type, color, style, and gender. Additionally, the description will include the temperature of the environment. Your task is to provide {quantity} outfits in a JSON array. Each outfit should be represented as a JSON ARRAY, with attributes for "top," "bottom," and "shoes." Ensure that each attribute is a string describing the corresponding clothing item.'''},
+            {
+                "role": "user", 
+                "content": prompt_chat_gpt
+            }
+        ],
+        temperature=1,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
     )
 
     rpta = completion.choices[0].message
     # json_string = '[ {"top": "Casual Blue T-Shirt", "bottom": "Black Jeans", "footwear": "Sneakers"} ]'
     # print(rpta.content)
 
-    outfits_array = json.loads(rpta.content)
-    # print(outfits_array)
+    outfits_array = json.loads(rpta.content)['outfits']
+    # print(outfits_array.outfits)
 
     outfits_array = generate_images_from_prompt(request_data, outfits_array)
 
     return outfits_array
 
 def generate_images_from_prompt(request_data, outfits_array):
-    FILE_NAME = "fashionapp-405020-0b9fed1c56ee.json"
+    FILE_NAME = "fashionapp-405020-cdf392b49002.json"
     API_URL = "https://us-central1-aiplatform.googleapis.com/"
 
     with open(FILE_NAME, "r") as file:
@@ -132,6 +142,9 @@ def generate_images_from_prompt(request_data, outfits_array):
                'exp': exp}
     additional_headers = {'kid': data['private_key_id']}
     signed_jwt = jwt.encode(payload, data['private_key'], headers=additional_headers, algorithm='RS256')
+
+    # print("TOKEN")
+    # print(signed_jwt)
 
     headers = {
         "Authorization": f"Bearer {signed_jwt}",

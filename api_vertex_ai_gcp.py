@@ -5,8 +5,8 @@ import time
 import jwt
 import json
 
-PROJECT_ID = "scenic-aileron-389223"
-FILE_NAME = "scenic-aileron-389223-00fedf4349a3.json"
+PROJECT_ID = "fashionapp-405020"
+FILE_NAME = "fashionapp-405020-cdf392b49002.json"
 
 API_URL = "https://us-central1-aiplatform.googleapis.com/"
 

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "fashionapp-405020",
+  "private_key_id": "cdf392b490025f7c6da074fdf4f2d630635708f4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCyNv5X4kLhzYT8\n6WpPRk2q8ygaKFaTZhFB4h0dvDaczbjmU5M2Q0Cf0KkdXz3hseXwQPZVLqt+43rv\n3WHaXXnh5IzogYKtxT4f3IrDqWXtsGg5guXQw3vxeawQCNTnZnRD4vEpYc4367eU\nksDCuxB2W84D6JA7/f/VxvsKV3M6jnvqE5xpRUyAf1OWrc4rWCIz+EehkdJO6DtZ\nr5rM4ep95NGCUQ9CyGMN9maaPgax/qpX/jWsRn8xdmHEMf78oDURx4dXHxFw1iHP\nshSeJxVdhWoNiIlnlPrHwlMheKyFMmJrTcXP4bnTF1WOC2+FK9zOtmgkMUBcbZE+\nUosPPpMPAgMBAAECggEAG4OOBPdzp/TY4UsQFKkf+JKN0GwF4b/STj+giySxsce5\nEiY5Bhmf8ox+b4Byx1N10n/VCBWqeG6aXknpf5MK7Csi7gqAqF9ZVgXwjoCqseWY\nUbi5zl8/1WoZfGhApnEU5h41aVQmSE/mCdQWWnoS8pL93XCcRAbU5qZPv6r8qT9w\nJU3jahcSrehJHeWW2JJEkx0+CoscItI62c2OrYT6CTictW5VE7ppe8718NUd7NxM\nlI2fatl20ppEEmi/nxEnSAFU2yllaCz8F61ItUbdAHwIK9XFQMhJAdc2qZdZSEsI\no/3LgYQbwLErqarjtCwO8iG0w0lkBWNJkaFhfcUb0QKBgQDibMB3hKY9ewjAYPxP\nR8W/9OZm6mb28VCG8YPPyNyc2DKQEvsdAWQmYhubnvviRYtv+MssDGckcSwXIdX4\nb6rcJ2cf4DUWeaM9VaWMcLQL+gWdL1aUkFn3415Avi4YDQLTN0E2Tv/5iro4yz99\nqYsxPAbTy8/+1QohogyYuycuywKBgQDJfi8ltAe8kH7ZFnQYdvMoeTeZKx6+4L77\nGSttOKgNriFuklObEKyEkoq+1457nOwIAByFIlrianCum8KlwIDM0UMVUtPnMNNY\n8qbCgitgPV58qm4LjCXDbtW2kuiKQbqkogx42c0FvXxtMsRR0yHhtpjv9kHMagFx\n0FHPVTCATQKBgQC+PdGYmgNzNKStvs8/bXZhSksrvVa1tRuLxfCR7JovzhbtpoUG\nYdzbwyKfJn1MKFJ3yforEGC45b290dgN3QUZ5KFozuDL+XeGWSe3UBp21aNR5ixA\ntuhgttDCZQglfQkanhpUnxvDdyPwBBVcZ89jlqPF4EDqQ+U3TQh4awcI8QKBgA+u\n16KaoaOGp6jj+4NP9tsmnDI6zfjTa2oF6oBk0YfHDukZUJKYOKVU9qGmC3wJmcGB\nqLagFuzalgyxKPRXyG6otwz41m9/OGQK9vnawd+Kx0jyxv/1F5dfkBjW1Gy2cv2P\nc2MQqMmSlxW0xt0Lju6PlNXQmAx+D8C5EzUND2pdAoGBAJlUL3VzybNcZr1cM6G1\nyI6p5F02utosy9ulBqCLO69DP+dGOX/06MPlJ8zIVxeIjjySQ6pLV3W0qgeNGf4z\noh/sMwKvOQvbzDGW4TRboP6WsaUogMA8NaPyVbP3Hq/EsBPpi6TI6lTGPi4WTvuG\nmV6mR/guL9ZpG7sY9FzJJiWs\n-----END PRIVATE KEY-----\n",
+  "client_email": "apiaccount@fashionapp-405020.iam.gserviceaccount.com",
+  "client_id": "106987176845566404882",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/apiaccount%40fashionapp-405020.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
