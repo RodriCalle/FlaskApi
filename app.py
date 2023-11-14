@@ -19,7 +19,6 @@ from openai import OpenAI
 # from craiyon import Craiyon
 
 OPENAI_API_KEY="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"
-# OpenAI.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
 
 app = Flask(__name__)
 
