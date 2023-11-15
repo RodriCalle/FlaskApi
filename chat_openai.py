@@ -12,9 +12,9 @@ completion = client.chat.completions.create(
         response_format={ "type": "json_object" },
         messages=[
           {"role": "system", 
-           "content": f'''You are a fashion expert specialized in clothing design. You will receive a description of an item of clothing, including type, color, style, and gender. Additionally, the description includes the ambient temperature. Your task is to provide {quantity} sets of clothing that include the item and fit the main description. Each set should be represented as a JSON object, with attributes for "top", "bottom", and "shoes". Make sure each attribute is a string that describes the corresponding item of clothing in the format of: style color item of clothing. The response must be a JSON object with an outfits element that is an array of the generated objects.'''},
+           "content": f'''You are a fashion expert specialized in clothing design. You will receive a description of an item of clothing, including type, color, style, and gender. Additionally, the description includes the ambient temperature. Your task is to provide {quantity} sets of clothing that include the item and fit the main description, without being modified. Each set should be represented as a JSON object, with attributes for "top", "bottom", and "shoes". Make sure each attribute is a string that describes the corresponding item of clothing in the format of: color item of clothing. The response must be a JSON object with an outfits element that is an array of the generated objects.'''},
           {"role": "user", 
-           "content": "Casual Blue T-Shirt for summer in 25 degrees Celsius"}
+           "content": "Man Casual Blue T-Shirt for summer in 25 degrees Celsius"}
         ]
     )
 
