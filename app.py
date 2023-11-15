@@ -97,7 +97,8 @@ def generate_outfits(request_data):
         messages=[
             {
                 "role": "system", 
-                "content": f'''You are a fashion expert specializing in clothing design. You will receive descriptions of clothing items, including the type, color, style, and gender. Additionally, the description will include the temperature of the environment. Your task is to provide {quantity} outfits in a JSON array. Each outfit should be represented as a JSON ARRAY, with attributes for "top," "bottom," and "shoes." Ensure that each attribute is a string describing the corresponding clothing item.'''},
+                # "content": f'''You are a fashion expert specializing in clothing design. You will receive descriptions of clothing items, including the type, color, style, and gender. Additionally, the description will include the temperature of the environment. Your task is to provide {quantity} outfits in a JSON array. Each outfit should be represented as a JSON ARRAY, with attributes for "top," "bottom," and "shoes." Ensure that each attribute is a string describing the corresponding clothing item.'''},
+                "content": f'''You are a fashion expert specialized in clothing design. You will receive a description of an item of clothing, including type, color, style, and gender. Additionally, the description includes the ambient temperature. Your task is to provide {quantity} sets in a JSON array that includes the main garment. Each array should be represented as a JSON ARRAY, with attributes for "top", "bottom" and "shoes". Make sure each attribute is a string that describes the corresponding item of clothing.'''},
             {
                 "role": "user", 
                 "content": prompt_chat_gpt
