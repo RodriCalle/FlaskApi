@@ -33,7 +33,7 @@ headers = {
 data = {
   "instances": [
     {
-      "prompt": "Fashion image of a full length man smiling dressing Casual T-Shirt color Treehouse and Dark Wash Denim Jeans and Black Canvas Sneakers"
+      "prompt": "Fashion image of a full length man smiling and dressing Casual Blue T-Shirt and Dark Wash Denim Jeans and Black Canvas Sneakers taken from far away"
     }
   ],
   "parameters": {

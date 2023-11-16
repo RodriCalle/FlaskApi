@@ -72,7 +72,7 @@ def generate_promt_to_chat_gpt(request):
     return f"{request['sex']} {request['style']} {request['color']} {request['type']} for {request['season']} in {request['temperature']} Celsius degrees"
 
 def generate_promt_for_image_generation(request, outfit):
-    prompt = f"Fashion image of a full length {request['sex']} smiling and wearing {outfit} taken from far away."
+    prompt = f"Fashion image of a full length {request['sex']} smiling and dressing {outfit} taken from far away"
     return prompt
 
 def generate_text_with_outfit(outfit):
@@ -88,7 +88,7 @@ def generate_text_with_outfit(outfit):
 def generate_outfits(request_data):
     # generar outfits text
     prompt_chat_gpt = generate_promt_to_chat_gpt(request_data)
-    quantity = "two"
+    quantity = "five"
 
     client = OpenAI(api_key=OPENAI_API_KEY)
     completion = client.chat.completions.create(

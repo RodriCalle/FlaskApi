@@ -1,7 +1,7 @@
 
 import  openai
-openai.organization = "org-yJpmbqbka0cb7xqz5uPDYmmq"
-openai.api_key = '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'
+openai.organization = ""
+openai.api_key = ""
 
 res = openai.Image.create(
     model="dall-e-3",
@@ -10,7 +10,6 @@ res = openai.Image.create(
     quality="standard",
     n=1
 )
-
 
 print(res)
 
